@@ -1,0 +1,12 @@
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #3478bd;
+}

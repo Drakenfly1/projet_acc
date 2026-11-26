@@ -1,0 +1,32 @@
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.speaker {
+  text-align: center;
+  background-color: #f4f7fb;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  background-color: #dbeafe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.speaker h3 {
+  color: #15395e;
+}
+
+.speaker p {
+  color: #64748b;
+}

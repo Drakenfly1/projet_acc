@@ -1,0 +1,25 @@
+header {
+  background: linear-gradient(135deg, #15395e, #3478bd);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+a {
+  display: inline-block;
+  background-color: white;
+  color: #15395e;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
