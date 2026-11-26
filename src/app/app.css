@@ -5,9 +5,15 @@
 }
 
 main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
+  width: 92%;
+  max-width: 1500px;
+  margin: 35px auto;
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 94%;
+    margin: 20px auto;
+  }
 }

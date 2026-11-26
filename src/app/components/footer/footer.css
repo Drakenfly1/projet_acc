@@ -1,10 +1,22 @@
 footer {
-  background-color: #15395e;
+  background: #173b65;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 25px 20px;
+  border-top: 1px solid #ffffff15;
 }
 
-p {
-  margin: 8px 0;
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+footer p {
+  color: #cbd5e1;
+  font-size: 12px;
+  margin: 10px 0 0;
 }

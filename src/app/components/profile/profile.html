@@ -1,13 +1,35 @@
-<section id="profile">
+<section class="profile-card">
 
-  <div class="avatar">👤</div>
+  <div class="card-heading">
 
-  <div>
-    <h2>Profil utilisateur</h2>
+    <div class="heading-icon">
+      <i class="bi bi-person-circle"></i>
+    </div>
 
-    <p><strong>Nom :</strong> {{ user.name }}</p>
+    <div>
+      <h2>Profil utilisateur</h2>
+      <p>Vos informations personnelles</p>
+    </div>
 
-    <p><strong>Email :</strong> {{ user.email }}</p>
+  </div>
+
+  <div class="profile-content">
+
+    <div class="profile-avatar">
+      {{ user.name.charAt(0).toUpperCase() }}
+    </div>
+
+    <div class="user-details">
+
+      <h3>{{ user.name }}</h3>
+
+      <p>
+        <i class="bi bi-envelope"></i>
+        {{ user.email }}
+      </p>
+
+    </div>
+
   </div>
 
 </section>

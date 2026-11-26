@@ -1,44 +1,131 @@
-section {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  border-left: 4px solid #16856c;
+.friends-card {
+  margin: 0;
 }
 
-.avatar {
-  width: 65px;
-  height: 65px;
-  background-color: #e0f5eb;
-  border-radius: 50%;
+.card-heading {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 30px;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.heading-icon {
+  width: 48px;
+  height: 48px;
+  background: #ecfdf5;
+  color: #059669;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
   flex-shrink: 0;
 }
 
-.content {
+.heading-text {
   flex: 1;
-  min-width: 0;
-}
-
-.inputs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-input {
-  padding: 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 5px;
-  max-width: 100%;
-}
-
-li {
-  margin-bottom: 8px;
 }
 
 h2 {
-  margin-top: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.card-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 4px 0 0;
+}
+
+.counter {
+  background: #ecfdf5;
+  color: #047857;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin: 24px 0;
+}
+
+.inputs input {
+  width: 100%;
+  min-width: 0;
+}
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.friend:hover {
+  border-color: #93c5fd;
+  background: white;
+}
+
+.friend-avatar {
+  width: 48px;
+  height: 48px;
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.friend:nth-child(2) .friend-avatar {
+  color: #7c3aed;
+  background: #ede9fe;
+}
+
+.friend:nth-child(3) .friend-avatar {
+  color: #059669;
+  background: #d1fae5;
+}
+
+.friend h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.friend span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-icon {
+  margin-left: auto;
+  color: #059669;
+  font-size: 19px;
+}
+
+@media (max-width: 900px) {
+  .friends-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .inputs {
+    grid-template-columns: 1fr;
+  }
 }

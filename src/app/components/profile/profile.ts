@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [UpperCasePipe],
   templateUrl: './profile.html',
   styleUrl: './profile.css'
 })

@@ -1,30 +1,62 @@
-<section id="friends">
+<section class="friends-card">
 
-  <div class="avatar">👥</div>
+  <div class="card-heading">
 
-  <div class="content">
-
-    <h2>Liste des amis</h2>
-
-    <div class="inputs">
-
-      <input type="text" [(ngModel)]="name">
-
-      <input type="text" [(ngModel)]="name">
-
-      <input type="text" [(ngModel)]="name">
-
+    <div class="heading-icon">
+      <i class="bi bi-people"></i>
     </div>
 
-    <ul>
+    <div class="heading-text">
+      <h2>Liste des amis</h2>
+      <p>Votre réseau de contacts</p>
+    </div>
 
-      @for (friend of friends; track $index) {
-        <li>{{ friend }}</li>
-      } @empty {
-        <li>Aucun ami enregistré.</li>
-      }
+    <span class="counter">
+      {{ friends.length }} amis
+    </span>
 
-    </ul>
+  </div>
+
+  <div class="inputs">
+
+    <input type="text"
+           [(ngModel)]="name"
+           aria-label="Champ de liaison 1">
+
+    <input type="text"
+           [(ngModel)]="name"
+           aria-label="Champ de liaison 2">
+
+    <input type="text"
+           [(ngModel)]="name"
+           aria-label="Champ de liaison 3">
+
+  </div>
+
+  <div class="friends-grid">
+
+    @for (friend of friends; track $index) {
+
+      <article class="friend">
+
+        <div class="friend-avatar">
+          {{ friend.charAt(0) }}
+        </div>
+
+        <div>
+          <h3>{{ friend }}</h3>
+          <span>Contact</span>
+        </div>
+
+        <i class="bi bi-person-check contact-icon"></i>
+
+      </article>
+
+    } @empty {
+
+      <p>Aucun ami enregistré.</p>
+
+    }
 
   </div>
 

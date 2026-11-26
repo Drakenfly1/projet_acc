@@ -1,34 +1,67 @@
-<section id="notifications">
+<section class="notifications-card">
 
-  <div class="avatar">🔔</div>
+  <div class="card-heading">
 
-  <div class="content">
+    <div class="heading-icon">
+      <i class="bi bi-bell"></i>
+    </div>
 
-    <h2>Zone de notifications</h2>
+    <div class="heading-text">
+      <h2>Zone de notifications</h2>
+      <p>Restez informé des dernières actualités</p>
+    </div>
+
+    <span class="counter">
+      {{ notifications.length }} nouvelles
+    </span>
+
+  </div>
+
+  <div class="notification-content">
 
     <p>
-      Vous avez {{ notifications.length }}
+      Vous avez
+      <strong>{{ notifications.length }}</strong>
       nouvelles notifications.
     </p>
 
     <button (click)="toggleNotifications()">
 
+      <i class="bi bi-bell"></i>
+
       {{ showNotifications ? 'Masquer' : 'Afficher' }}
       les notifications
+
+      <i class="bi"
+         [class.bi-chevron-up]="showNotifications"
+         [class.bi-chevron-down]="!showNotifications">
+      </i>
 
     </button>
 
     @if (showNotifications) {
 
-      <ul>
+      <div class="notification-list">
 
         @for (notification of notifications; track $index) {
-          <li>{{ notification }}</li>
+
+          <div class="notification-item">
+
+            <div class="notification-icon">
+              <i class="bi bi-info-circle"></i>
+            </div>
+
+            <p>{{ notification }}</p>
+
+          </div>
+
         } @empty {
-          <li>Aucune notification.</li>
+
+          <p>Aucune notification.</p>
+
         }
 
-      </ul>
+      </div>
 
     }
 
