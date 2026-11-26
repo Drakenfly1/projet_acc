@@ -2,29 +2,93 @@
 
   <h2>Liste des conférences à venir</h2>
 
+  <p>Cliquez sur une conférence pour afficher ses détails.</p>
+
+  <input
+    type="search"
+    [(ngModel)]="searchTitle"
+    placeholder="Tapez le titre de la conférence"
+    aria-label="Rechercher une conférence"
+  >
+
   <div class="conference-grid">
 
-    <article class="conference-card">
-      <h3>Angular 21 Conference</h3>
-      <p><strong>Date :</strong> 15/11/2027</p>
-      <p><strong>Lieu :</strong> Tunis</p>
-      <p>Découvrez les nouveautés d'Angular.</p>
-    </article>
+    @for (conference of filteredConferences; track conference.id) {
 
-    <article class="conference-card">
-      <h3>Signals Workshop</h3>
-      <p><strong>Date :</strong> 30/11/2027</p>
-      <p><strong>Lieu :</strong> Ariana</p>
-      <p>Découvrez la réactivité avec les Signals.</p>
-    </article>
+      <article class="conference-card">
 
-    <article class="conference-card">
-      <h3>Web Conference</h3>
-      <p><strong>Date :</strong> 20/11/2027</p>
-      <p><strong>Lieu :</strong> Sousse</p>
-      <p>Découvrez les technologies du Web.</p>
-    </article>
+        <h3>
+          {{ conference.title | uppercase }}
+        </h3>
+
+        <p>
+          <strong>Date :</strong>
+          {{ conference.date | date:'dd/MM/yyyy' }}
+        </p>
+
+        <p>
+          <strong>Lieu :</strong>
+          {{ conference.place }}
+        </p>
+
+        <p>
+          <strong>Places restantes :</strong>
+          {{ remainingPlaces(conference) }}
+        </p>
+
+        <button
+          [ngClass]="{
+            'available': remainingPlaces(conference) >= 10,
+            'limited': remainingPlaces(conference) > 0
+                       && remainingPlaces(conference) < 10,
+            'full': remainingPlaces(conference) <= 0
+          }"
+          [disabled]="remainingPlaces(conference) <= 0"
+          (click)="register(conference)"
+        >
+          S'inscrire
+        </button>
+
+        <button
+          class="details-button"
+          (click)="showDetails(conference)"
+        >
+          Détails
+        </button>
+
+      </article>
+
+    } @empty {
+
+      <p>Aucune conférence trouvée.</p>
+
+    }
 
   </div>
+
+  @if (selectedConference) {
+
+    <div class="details-panel">
+
+      <h3>{{ selectedConference.title | uppercase }}</h3>
+
+      <p>{{ selectedConference.description }}</p>
+
+      <p>
+        Participants :
+        {{ selectedConference.nbParticipants }}
+        / {{ selectedConference.maxParticipants }}
+      </p>
+
+      <button
+        class="details-button"
+        (click)="selectedConference = null"
+      >
+        Fermer
+      </button>
+
+    </div>
+
+  }
 
 </section>

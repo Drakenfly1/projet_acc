@@ -1,21 +1,68 @@
+section {
+  border-left: 4px solid #16856c;
+}
+
+input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px;
+  margin: 15px 0 25px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
 .conference-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit, minmax(230px, 1fr)
+  );
   gap: 20px;
 }
 
 .conference-card {
-  background-color: #f4f7fb;
+  background: #f4f7fb;
+  border: 1px solid #dbe3ed;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #dbe3ed;
-  border-top: 4px solid #3478bd;
-}
-
-.conference-card:hover {
-  box-shadow: 0 4px 12px #00000015;
 }
 
 h3 {
   color: #15395e;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: 4px;
+}
+
+.available {
+  background-color: #16803d;
+}
+
+.limited {
+  background-color: #e68a00;
+}
+
+.full {
+  background-color: #c62828;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.details-button {
+  background-color: #255b94;
+}
+
+.details-panel {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #e8f0fa;
 }

@@ -1,0 +1,31 @@
+<section id="friends">
+
+  <div class="avatar">👥</div>
+
+  <div class="content">
+
+    <h2>Liste des amis</h2>
+
+    <div class="inputs">
+
+      <input type="text" [(ngModel)]="name">
+
+      <input type="text" [(ngModel)]="name">
+
+      <input type="text" [(ngModel)]="name">
+
+    </div>
+
+    <ul>
+
+      @for (friend of friends; track $index) {
+        <li>{{ friend }}</li>
+      } @empty {
+        <li>Aucun ami enregistré.</li>
+      }
+
+    </ul>
+
+  </div>
+
+</section>
